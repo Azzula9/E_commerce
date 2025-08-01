@@ -7,11 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Product } from "@/types/interfaces";
+
 
 const ProductsSection = () => {
-  const [products, setProducts] = useState([]);
+const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -29,7 +31,7 @@ const ProductsSection = () => {
     fetchProducts();
   }, []);
 
-  const ProductCard = ({ product }) => (
+const ProductCard = ({ product }: { product: Product }) => (
     <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300">
       <div className="relative overflow-hidden bg-white">
         <img
