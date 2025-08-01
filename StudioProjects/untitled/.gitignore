@@ -1,0 +1,9 @@
+.idea/ 
+.dart_tool/ 
+build/ 
+.gradle/ 
+.vscode/ 
+.android/ 
+.ios/ 
+AppData/ 
+*.log 
